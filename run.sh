@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Starting PostgreSQL with Docker Compose..."
-docker-compose up -d
+docker compose up -d
 
 echo "Waiting for PostgreSQL to be ready..."
 sleep 5
