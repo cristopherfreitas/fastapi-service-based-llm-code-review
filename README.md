@@ -8,6 +8,7 @@ A simple FastAPI application demonstrating service-based architecture for user m
 - **User Management**: Create and retrieve users with validation
 - **PostgreSQL Integration**: Uses SQLAlchemy ORM with PostgreSQL database
 - **Docker Support**: PostgreSQL runs in a Docker container for easy setup
+- **Automated Code Review**: Integrated Claude Code review on pull requests for code quality assurance
 
 ## Project Structure
 
