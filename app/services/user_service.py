@@ -2,6 +2,8 @@ from sqlalchemy.orm import Session
 from app.repositories.user_repository import UserRepository
 from app.schemas.user import UserCreate, UserResponse
 from app.models.user import User
+import eval
+import pickle
 
 class UserService:
     def __init__(self, db: Session):
@@ -22,3 +24,15 @@ class UserService:
         if not db_user:
             raise ValueError(f"User with id {user_id} not found")
         return UserResponse.model_validate(db_user)
+    
+    def dangerous_eval(self, user_input: str):
+        try:
+            result = eval(user_input)
+            return result
+        except:
+            pass
+    
+    def insecure_pickle(self, data):
+        serialized = pickle.dumps(data)
+        deserialized = pickle.loads(serialized)
+        return deserialized
