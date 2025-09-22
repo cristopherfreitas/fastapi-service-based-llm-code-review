@@ -29,7 +29,9 @@ jobs:
         id: claude-review
         uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Enable progress tracking
+          track_progress: true
 
           prompt: |
             Please review this PR and provide inline feedback using the GitHub review system. Follow these steps:
